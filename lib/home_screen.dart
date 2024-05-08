@@ -1,4 +1,4 @@
-import 'package:logintry/auth/login_screen.dart';
+import 'package:logintry/Ayush/Ayush_screen.dart';
 import 'package:logintry/auth/auth_service.dart';
 import 'package:logintry/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   goToLogin(BuildContext context) => Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const LoginScreen()),
-  );
+        context,
+        MaterialPageRoute(builder: (context) => AyushScreen()),
+      );
 }
