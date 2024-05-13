@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "support-logintry-kube",
+  "private_key_id": "b59042a87ca2eb15ac1107d1e55b5086e83a208e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC2qzJOFnMQxtQW\nBX6ScvkUrtJNtRaqaC3ToJylEESHrWZof7XqELwa30j7Fn2aDT1lyqVXiJBvc4kc\nEtqF/j41q7olq0soKYiwM90EZEbKS8pkc6c9SF4iRwBEv85SVHNc4SL7oiMF7cl1\n/DyY9m9FO41KN9iNbVEcFtPUYl8sFynYNz0WObj4sI9orScsH0xUFPDWI/P691kl\nAvndhprNPSUOUfOhxAIBiseooRnoQhCPP5dFA3lWRF9v8K2FJ2ET7jdxMcxswYuy\n1JVJQT5aLF/47YQJMgGk9L7c5Z9EV3gh6r8+T0Bd28EQBY10/YNBXPogy0O+Srch\nrAVi4DLfAgMBAAECggEABqONYbiFm23lDAXYGR7Cg+iDNBfjjiHYtfyHx9NzZRJs\nOSv1nOrwscNUK6aJA89xSMPYjBEDl+0AztKe9TDqu/tyBVwvhK0z8YVKen75ODcQ\nrfrB5QlVmiNpGlC7jLAwDbYQ0DGaq57PjxzJDh05TCT9b4w83o3mC+UpxIz4WhJ+\nHr8zU2zxhUQ+PMMpQX4WAvBzt/310Dh2DcVPplzT7yg/Ethuiy/FdFxLn7sDX/70\ne91nOYIDWt2H5+zl692orehoXiW3P9ppV1DPDhc1ChzJadbCE9co3dIoe6W11it9\njkplTGULmfAkl0k2QGXhBsHrS8EyELDe32VWY+ZEZQKBgQD4Vlc0gUX4eV2zKL+A\nyw3zukCyg4J/VFh2Vl3oZqIK8w9NUUQfohvO6H7MAwSnZWQGKCohAnZzPbUuKIsg\nXErmMpc4t+BxBn8XE1pzmJtQfNiJcY6kcdwRDMaoRTvGbVHFF9rThezfY+c1xjVh\nQJWAq8w1S3fvgEcIKGN52ESPXQKBgQC8TiDxZFZ/IezuTjqh1DlT6v/D4sya3BYY\nMcO8z5+4GE1PKX1l8TYTeaD4TDGJ2Qjph1Mxra/HViHwvNaheVvzMNXknsL0KJkp\nDPjfcyvfd5VN9CArIODWwfUU/wwQnWNhzI4nqEi9mvxvj8EWX+vTjq2VBo5++i/9\n/a6dR3/zawKBgER26UvcaAH808xU65cCZDJRowyUHSIlis31OaacxQfnwsw6H2Hp\nO2lrx6lPG7Vaypy37gVzvFxBIvY6z0B4sV2NjQtiBkqi0970wvcjl441HS2nVQAZ\nM+avcwVpMPWfpe+EiBvQzGE6FcBJiOXq/EyhEIeQ6tvorayeFe69pQkxAoGAFPsH\nhJ3PXV7kTTD+K2W/9W+ri6HLdj2rYIq66mCfxR1AD9/pjuAvTEAzBTdIFbnO2mYv\niMt3WFhqc642o8snyZLZYh2mTxnu5roBSLRGYSGrywG2S9ff9U2rBunb6EYA+raV\n6ClB4Y5RLgTwWJPbbLjq8j3GxrMNgdkwCWocAX0CgYAa2lKqvAVngdyjfb6EgQ4B\nCDF8/lH5NLJvV2kQzYBJanYjXQahOpq+wn3XVTulRrCoEDWoCy3NnK4Ps7WIdwl5\n/1rOir1Hcum5gikAkPRUtUnoDZq4hL8TqYxRVPhfggG5eGt2OonLrw8ZcWtNhp0b\nbuQmvNFO0gRGi11VbiSM2Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "support-login@support-logintry-kube.iam.gserviceaccount.com",
+  "client_id": "101327978760416238790",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/support-login%40support-logintry-kube.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

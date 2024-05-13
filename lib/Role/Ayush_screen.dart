@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logintry/Map_bot/current_location_screen.dart';
 // import 'package:logintry/auth/login_screen.dart';
 import 'package:logintry/auth/User_login_screen.dart';
 import 'package:logintry/auth/Admin_login_screen.dart';
@@ -39,6 +40,16 @@ class AyushScreen extends StatelessWidget {
                   // Handle button press
                 },
                 child: Text('Start as Admin'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CurrentLocationScreen()),
+                  );
+                  // Handle button press
+                },
+                child: Text('Start as Guest'),
               ),
             ],
           ),

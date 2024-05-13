@@ -6,6 +6,7 @@ import 'package:logintry/home_screen.dart';
 import 'package:logintry/widgets/button.dart';
 import 'package:logintry/widgets/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:logintry/Map_bot/current_location_screen.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({super.key});
@@ -37,17 +38,7 @@ class AdminLoginState extends State<AdminLogin> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-                child: Padding(
-              padding: EdgeInsets.only(top: 200.0),
-              child: Icon(
-                Icons.account_circle_outlined,
-                size: 80,
-              ),
-            )),
-            const SizedBox(
-              height: 30,
-            ),
+            const Spacer(),
             const Text(
               "Login as Admin",
               style: TextStyle(
@@ -66,28 +57,27 @@ class AdminLoginState extends State<AdminLogin> {
               hint: "Enter Password",
               label: "Password",
               controller: _password,
-              isPassword: true,
             ),
             const SizedBox(height: 30),
             _isLoading
                 ? CircularProgressIndicator(
-                    color: Colors.blueGrey,
-                  ) // Show CircularProgressIndicator if loading
+              color: Colors.blueGrey,
+            ) // Show CircularProgressIndicator if loading
                 : CustomButton(
-                    label: "Login",
-                    onPressed: _login,
-                  ),
-            const SizedBox(height: 30),
+              label: "Login",
+              onPressed: _login,
+            ),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("New Admin? "),
+                const Text("Don't have an account? "),
                 InkWell(
                   onTap: () => goToSignup(context),
                   child: const Text(
                     "Signup",
                     style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.purple,
                         fontWeight: FontWeight.bold), // Adjust text style
                   ),
                 )
@@ -100,27 +90,27 @@ class AdminLoginState extends State<AdminLogin> {
     );
   }
 
-  goToSignup(BuildContext context) => Navigator.push(
+  goToSignup(BuildContext context) =>
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const AdminSignup()),
       );
 
-  goToHome(BuildContext context) => Navigator.push(
+  goToHome(BuildContext context) =>
+      Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const CurrentLocationScreen()),
       );
 
   _login() async {
-    setState(() {
-      _isLoading = true; // Show loading indicator
-    });
     final user =
-        await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
+    await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
 
     if (user != null) {
       log("User Logged In");
       goToHome(context);
-    } else {
+    }
+    else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Invalid Email or Password. Please try again!'),
         duration: Duration(seconds: 3),
