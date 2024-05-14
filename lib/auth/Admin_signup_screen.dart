@@ -8,6 +8,8 @@ import 'package:Ayush/home_screen.dart';
 import 'package:Ayush/widgets/button.dart';
 import 'package:Ayush/widgets/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:Ayush/auth/Admin_inputPage.dart';
+import 'package:Ayush/Map_bot/current_location_screen.dart';
 
 class AdminSignup extends StatefulWidget {
   const AdminSignup({super.key});
@@ -64,15 +66,32 @@ class AdminSignupState extends State<AdminSignup> {
                 isPassword: true,
                 controller: _password,
               ),
-              const SizedBox(height: 30),
-              _isLoading
-                  ? CircularProgressIndicator(
-                      color: Colors.blueGrey,
-                    ) // Show CircularProgressIndicator if loading
-                  : CustomButton(
-                      label: "Signup",
-                      onPressed: _signup,
-                    ),
+              const SizedBox(height: 30,),
+              CustomButton(label: "Enter Map",
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CurrentLocationScreen()
+                  ),
+                );
+                // Handle button press
+              },),
+              // const SizedBox(height: 30),
+              // _isLoading
+              //     ? CircularProgressIndicator(
+              //         color: Colors.blueGrey,
+              //       ) // Show CircularProgressIndicator if loading
+              //     : CustomButton(
+              //         label: "Signup",
+              //         onPressed: (){
+              //           Navigator.push(
+              //             context,
+              //             MaterialPageRoute(builder: (context) => AdminInputPage()),
+              //           );
+              //           // Handle button press
+              //         },
+              //       ),
+
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

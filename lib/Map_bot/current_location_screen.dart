@@ -5,7 +5,9 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:Ayush/Map_bot/SupportPage.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:Ayush/Map_bot/Logout_page.dart';
 import 'package:Ayush/Map_bot/customInfoWindow.dart';
+
 
 class CurrentLocationScreen extends StatefulWidget {
   const CurrentLocationScreen({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
   late GoogleMapController googleMapController;
   // CameraPosition? initialCameraPosition;
   static const CameraPosition initialCameraPosition =
-      CameraPosition(target: LatLng(26.9124, 75.7873), zoom: 14);
+  CameraPosition(target: LatLng(26.9124, 75.7873), zoom: 14);
 
   Set<Marker> markers = {};
 
@@ -60,7 +62,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                       openingHours: "8AM - 2PM ",
                       phoneNumber: "01414033146",
                       adress: "34, Shiv Shakti Nagar, Nirman Nagar, Brijlalpura, Jaipur, Rajasthan 302019",
-                      ),
+                    ),
                   );
                 });
           }),
@@ -100,7 +102,6 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                   );
                 });
           }),
-
       Marker(
           markerId: MarkerId("5"),
           position: LatLng(26.86109301136174, 75.79586636596103),
@@ -146,6 +147,13 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
       appBar: AppBar(
         title: const Text("AYUSH Accessibility"),
         centerTitle: true,
+        actions: [
+          IconButton(onPressed: (){
+            showDialog(context: context, builder: (BuildContext context) {
+              return logoutPage(); // Show user information dialog
+            },);
+          }, icon: Icon(Icons.exit_to_app),)
+        ],
       ),
       body: GoogleMap(
         initialCameraPosition: initialCameraPosition,
@@ -215,6 +223,24 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     }
   }
 
+
+  // void _showAdminInputDialog(BuildContext context) {
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return AdminInputDialog(
+  //         context: context,
+  //         onMarkerAdded: (marker) {
+  //           setState(() {
+  //             markers.add(marker);
+  //           });
+  //         },
+  //       );
+  //     },
+  //   );
+  // }
+
+
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -244,3 +270,122 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     return position;
   }
 }
+
+/*
+class AdminInputDialog extends StatelessWidget {
+  final BuildContext context;
+
+  final Function(Marker) onMarkerAdded;
+
+  AdminInputDialog({super.key, required this.context,required this.onMarkerAdded});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('Add Marker'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: _latitudeController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(labelText: 'Latitude'),
+            ),
+            TextField(
+              controller: _longitudeController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(labelText: 'Longitude'),
+            ),
+            TextField(
+              controller: _titleController,
+              decoration: InputDecoration(labelText: 'Title'),
+            ),
+            TextField(
+              controller: _openingHoursController,
+              decoration: InputDecoration(labelText: 'Opening Hours'),
+            ),
+            TextField(
+              controller: _phoneNumberController,
+              decoration: InputDecoration(labelText: 'Phone Number'),
+            ),
+            TextField(
+              controller: _addressController,
+              decoration: InputDecoration(labelText: 'Address'),
+            ),
+            // TextField(
+            //   controller: _websiteUrlController,
+            //   decoration: InputDecoration(labelText: 'Website URL'),
+            // ),
+            TextField(
+              controller: _imageUrlController,
+              decoration: InputDecoration(labelText: 'Image URL'),
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: Text('Cancel'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            _addMarker();
+            Navigator.of(context).pop();
+          },
+          child: Text('Save'),
+        ),
+      ],
+    );
+  }
+
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _openingHoursController =
+  TextEditingController();
+  final TextEditingController _phoneNumberController =
+  TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
+  // final TextEditingController _websiteUrlController = TextEditingController();
+  final TextEditingController _imageUrlController = TextEditingController();
+  final TextEditingController _latitudeController = TextEditingController();
+  final TextEditingController _longitudeController = TextEditingController();
+
+  void _addMarker() {
+    final double latitude = double.tryParse(_latitudeController.text) ?? 0.0;
+    final double longitude =
+        double.tryParse(_longitudeController.text) ?? 0.0;
+    final String title = _titleController.text;
+    final String openingHours = _openingHoursController.text;
+    final String phoneNumber = _phoneNumberController.text;
+    final String adress = _addressController.text;
+    // final String websiteUrl = _websiteUrlController.text;
+    final String imageUrl = _imageUrlController.text;
+
+    final marker = Marker(
+      markerId: MarkerId(title),
+      position: LatLng(latitude, longitude),
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: CustomInfoWindow(
+                title: title,
+                imageURL: imageUrl,
+                openingHours: openingHours,
+                phoneNumber: phoneNumber,
+                adress: adress,
+              ),
+            );
+          },
+        );
+      },
+    );
+
+    onMarkerAdded(marker);
+  }
+}
+ */
