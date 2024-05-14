@@ -1,6 +1,6 @@
-import 'package:logintry/Role/Ayush_screen.dart';
-import 'package:logintry/auth/auth_service.dart';
-import 'package:logintry/widgets/button.dart';
+import 'package:Ayush/Role/Ayush_screen.dart';
+import 'package:Ayush/auth/auth_service.dart';
+import 'package:Ayush/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

@@ -1,4 +1,4 @@
-name: logintry
+name: Ayush
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   dialog_flowtter:
+  url_launcher: ^6.2.6
 
 
 
@@ -69,6 +70,7 @@ flutter:
   assets:
     - assets/
     - assets/ayush_logo.png
+#    - assets/Sm_hospital.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

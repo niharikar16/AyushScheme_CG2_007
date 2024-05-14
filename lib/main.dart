@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'package:logintry/Role/Ayush_screen.dart';
+import 'package:Ayush/Role/Ayush_screen.dart';
 // import 'package:logintry/auth/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
-import 'package:logintry/Map_bot/current_location_screen.dart';
+import 'package:Ayush/Map_bot/current_location_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

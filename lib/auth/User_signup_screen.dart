@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:logintry/auth/User_login_screen.dart';
+import 'package:Ayush/auth/User_login_screen.dart';
 import 'auth_service.dart';
 // import 'login_screen.dart';
-import 'package:logintry/home_screen.dart';
-import 'package:logintry/widgets/button.dart';
-import 'package:logintry/widgets/textfield.dart';
+import 'package:Ayush/home_screen.dart';
+import 'package:Ayush/widgets/button.dart';
+import 'package:Ayush/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 class UserSignup extends StatefulWidget {

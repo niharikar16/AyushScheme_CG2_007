@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:logintry/Map_bot/current_location_screen.dart';
+import 'package:Ayush/Map_bot/current_location_screen.dart';
 // import 'package:logintry/auth/login_screen.dart';
-import 'package:logintry/auth/User_login_screen.dart';
-import 'package:logintry/auth/Admin_login_screen.dart';
+import 'package:Ayush/auth/User_login_screen.dart';
+import 'package:Ayush/auth/Admin_login_screen.dart';
 
 class AyushScreen extends StatelessWidget {
   @override

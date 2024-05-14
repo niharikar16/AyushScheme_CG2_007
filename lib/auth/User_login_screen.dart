@@ -1,12 +1,12 @@
 import 'dart:developer';
-import 'package:logintry/Map_bot/current_location_screen.dart';
-import 'package:logintry/auth/User_signup_screen.dart';
+import 'package:Ayush/Map_bot/current_location_screen.dart';
+import 'package:Ayush/auth/User_signup_screen.dart';
 
 import 'auth_service.dart';
 // import 'signup_screen.dart';
-import 'package:logintry/home_screen.dart';
-import 'package:logintry/widgets/button.dart';
-import 'package:logintry/widgets/textfield.dart';
+import 'package:Ayush/home_screen.dart';
+import 'package:Ayush/widgets/button.dart';
+import 'package:Ayush/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 class UserLogin extends StatefulWidget {
