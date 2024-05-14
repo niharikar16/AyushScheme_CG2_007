@@ -1,8 +1,10 @@
+// import 'package:Ayush/Map_bot/Guest_current_location.dart';
 import 'package:flutter/material.dart';
 import 'package:Ayush/Map_bot/current_location_screen.dart';
 // import 'package:logintry/auth/login_screen.dart';
 import 'package:Ayush/auth/User_login_screen.dart';
 import 'package:Ayush/auth/Admin_login_screen.dart';
+import 'package:Ayush/Map_bot/Guest_current_location.dart';
 
 class AyushScreen extends StatelessWidget {
   @override
@@ -45,7 +47,7 @@ class AyushScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CurrentLocationScreen()),
+                    MaterialPageRoute(builder: (context) => GuestModeMaps()),
                   );
                   // Handle button press
                 },

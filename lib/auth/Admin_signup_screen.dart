@@ -67,11 +67,11 @@ class AdminSignupState extends State<AdminSignup> {
                 controller: _password,
               ),
               const SizedBox(height: 30,),
-              CustomButton(label: "Enter Map",
+              CustomButton(label: "Enter Details",
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CurrentLocationScreen()
+                  MaterialPageRoute(builder: (context) => AdminInputPage()
                   ),
                 );
                 // Handle button press

@@ -27,13 +27,7 @@ class logoutPage extends StatelessWidget {
                 },
                 child: Text("Logout"), // Logout button
               ),
-              ElevatedButton(onPressed: (){
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => CurrentLocationScreen()),
-                      (route) => false,
-                );
-              }, child: Text("Cancel"))
+
             ],
           ),
         ],
