@@ -1,5 +1,4 @@
-import 'dart:convert';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -232,6 +231,32 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     );
   }
 
+  void fetchMarkerDetailsFromDatabase() {
+    FirebaseFirestore.instance.collection('markers').get().then((querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        var markerDetails = MarkerDetails.fromMap(doc.data());
+        setState(() {
+          markers.add(Marker(
+            markerId: MarkerId(doc.id),
+            position: LatLng(markerDetails.latitude, markerDetails.longitude),
+            onTap: () {
+              showInfoWindowWithDirections(
+                context,
+                markerDetails.name,
+                markerDetails.imageURL,
+                markerDetails.openingHours,
+                markerDetails.phoneNumber,
+                markerDetails.address,
+                markerDetails.latitude,
+                markerDetails.longitude,
+              );
+            },
+          ));
+        });
+      });
+    });
+  }
+
 
   void launchNavigation(double destLatitude, double destLongitude) async {
     // Construct the URL with destination coordinates
@@ -283,5 +308,55 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     Position position = await Geolocator.getCurrentPosition();
 
     return position;
+  }
+}
+
+
+void saveMarkerDetailsToDatabase(MarkerDetails details) {
+  // Save marker details to Firestore
+  FirebaseFirestore.instance.collection('markers').add(details.toMap());
+}
+
+class MarkerDetails {
+  final String name;
+  final String imageURL;
+  final String openingHours;
+  final String phoneNumber;
+  final String address;
+  final double latitude;
+  final double longitude;
+
+  MarkerDetails({
+    required this.name,
+    required this.imageURL,
+    required this.openingHours,
+    required this.phoneNumber,
+    required this.address,
+    required this.latitude,
+    required this.longitude,
+  });
+
+  factory MarkerDetails.fromMap(Map<String, dynamic> map) {
+    return MarkerDetails(
+      name: map['name'],
+      imageURL: map['imageURL'],
+      openingHours: map['openingHours'],
+      phoneNumber: map['phoneNumber'],
+      address: map['address'],
+      latitude: map['latitude'],
+      longitude: map['longitude'],
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'imageURL': imageURL,
+      'openingHours': openingHours,
+      'phoneNumber': phoneNumber,
+      'address': address,
+      'latitude': latitude,
+      'longitude': longitude,
+    };
   }
 }

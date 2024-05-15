@@ -66,31 +66,31 @@ class AdminSignupState extends State<AdminSignup> {
                 isPassword: true,
                 controller: _password,
               ),
-              const SizedBox(height: 30,),
-              CustomButton(label: "Enter Details",
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AdminInputPage()
-                  ),
-                );
-                // Handle button press
-              },),
-              // const SizedBox(height: 30),
-              // _isLoading
-              //     ? CircularProgressIndicator(
-              //         color: Colors.blueGrey,
-              //       ) // Show CircularProgressIndicator if loading
-              //     : CustomButton(
-              //         label: "Signup",
-              //         onPressed: (){
-              //           Navigator.push(
-              //             context,
-              //             MaterialPageRoute(builder: (context) => AdminInputPage()),
-              //           );
-              //           // Handle button press
-              //         },
-              //       ),
+              // const SizedBox(height: 30,),
+              // CustomButton(label: "Enter Details",
+              // onPressed: (){
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(builder: (context) => AdminInputPage()
+              //     ),
+              //   );
+              //   // Handle button press
+              // },),
+              const SizedBox(height: 30),
+              _isLoading
+                  ? CircularProgressIndicator(
+                      color: Colors.blueGrey,
+                    ) // Show CircularProgressIndicator if loading
+                  : CustomButton(
+                      label: "Signup",
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CurrentLocationScreen()),
+                        );
+                        // Handle button press
+                      },
+                    ),
 
               const SizedBox(height: 30),
               Row(
